@@ -11,7 +11,6 @@
 		022F1F0F1B572717000223E3 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022F1F0E1B572717000223E3 /* ProfileTableViewController.swift */; };
 		022F1F111B572AC9000223E3 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022F1F101B572AC9000223E3 /* ProfileCell.swift */; };
 		0235EC321B0D7B34002B8A0C /* Kept.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0235EC311B0D7B34002B8A0C /* Kept.swift */; };
-		023CC97F1B9A8F5F00455BB9 /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023CC97E1B9A8F5F00455BB9 /* FriendsTableViewController.swift */; };
 		023CC9811B9B84F600455BB9 /* SuggestedFriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023CC9801B9B84F600455BB9 /* SuggestedFriendCell.swift */; };
 		0253C7C71B38DA550014EB95 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0253C7C61B38DA550014EB95 /* Address.swift */; };
 		026809821B2924D10006C43B /* ShippingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026809811B2924D10006C43B /* ShippingTableViewController.swift */; };
@@ -27,6 +26,7 @@
 		028B44C81B7ABB6800C5B79C /* Sale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028B44C71B7ABB6800C5B79C /* Sale.swift */; };
 		028CF7161AF84D150028DA35 /* SwipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028CF7151AF84D150028DA35 /* SwipeView.swift */; };
 		028CF7191AF8508A0028DA35 /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028CF7181AF8508A0028DA35 /* CardsViewController.swift */; };
+		028DF9621B9E2FFA005BAA4C /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028DF9611B9E2FFA005BAA4C /* FriendsTableViewController.swift */; };
 		0295F2081B4C83ED0029F911 /* NetworkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0295F2071B4C83ED0029F911 /* NetworkTableViewController.swift */; };
 		0295F20A1B4C84F10029F911 /* ProductCell4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0295F2091B4C84F10029F911 /* ProductCell4.swift */; };
 		0295F2101B4CBFBB0029F911 /* CheckoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0295F20F1B4CBFBB0029F911 /* CheckoutCell.swift */; };
@@ -76,7 +76,6 @@
 		022F1F0E1B572717000223E3 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		022F1F101B572AC9000223E3 /* ProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		0235EC311B0D7B34002B8A0C /* Kept.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kept.swift; sourceTree = "<group>"; };
-		023CC97E1B9A8F5F00455BB9 /* FriendsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 3; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
 		023CC9801B9B84F600455BB9 /* SuggestedFriendCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestedFriendCell.swift; sourceTree = "<group>"; };
 		0253C7C61B38DA550014EB95 /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		026809811B2924D10006C43B /* ShippingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShippingTableViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +91,7 @@
 		028B44C71B7ABB6800C5B79C /* Sale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sale.swift; sourceTree = "<group>"; };
 		028CF7151AF84D150028DA35 /* SwipeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeView.swift; sourceTree = "<group>"; };
 		028CF7181AF8508A0028DA35 /* CardsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
+		028DF9611B9E2FFA005BAA4C /* FriendsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
 		0295F2071B4C83ED0029F911 /* NetworkTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTableViewController.swift; sourceTree = "<group>"; };
 		0295F2091B4C84F10029F911 /* ProductCell4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCell4.swift; sourceTree = "<group>"; };
 		0295F20F1B4CBFBB0029F911 /* CheckoutCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckoutCell.swift; sourceTree = "<group>"; };
@@ -182,7 +182,7 @@
 				02D5C51C1B0FC33E00B172AF /* ChatViewController.swift */,
 				02C9746F1B45EA8F0019A046 /* ProductDetailViewController.swift */,
 				028B44C51B6ECB0F00C5B79C /* CommissionTableViewController.swift */,
-				023CC97E1B9A8F5F00455BB9 /* FriendsTableViewController.swift */,
+				028DF9611B9E2FFA005BAA4C /* FriendsTableViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -471,7 +471,6 @@
 				026809861B29AD830006C43B /* ShipAddDetailViewController.swift in Sources */,
 				026809841B2924ED0006C43B /* ShippingCell.swift in Sources */,
 				028CF7191AF8508A0028DA35 /* CardsViewController.swift in Sources */,
-				023CC97F1B9A8F5F00455BB9 /* FriendsTableViewController.swift in Sources */,
 				022F1F111B572AC9000223E3 /* ProfileCell.swift in Sources */,
 				02F818811AFD7814008C06EA /* User.swift in Sources */,
 				028B44C41B6EC5C400C5B79C /* CommissionCell.swift in Sources */,
@@ -482,6 +481,7 @@
 				02F818851B054941008C06EA /* Product.swift in Sources */,
 				026809821B2924D10006C43B /* ShippingTableViewController.swift in Sources */,
 				028CF7161AF84D150028DA35 /* SwipeView.swift in Sources */,
+				028DF9621B9E2FFA005BAA4C /* FriendsTableViewController.swift in Sources */,
 				02F8188B1B0AAACE008C06EA /* Location.swift in Sources */,
 				0295F2101B4CBFBB0029F911 /* CheckoutCell.swift in Sources */,
 				02D9CA521AF838330087175F /* AppDelegate.swift in Sources */,
