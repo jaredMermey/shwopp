@@ -27,6 +27,7 @@
 		028CF7161AF84D150028DA35 /* SwipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028CF7151AF84D150028DA35 /* SwipeView.swift */; };
 		028CF7191AF8508A0028DA35 /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028CF7181AF8508A0028DA35 /* CardsViewController.swift */; };
 		028DF9621B9E2FFA005BAA4C /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028DF9611B9E2FFA005BAA4C /* FriendsTableViewController.swift */; };
+		028DF9641BA27ED5005BAA4C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028DF9631BA27ED5005BAA4C /* ProfileViewController.swift */; };
 		0295F2081B4C83ED0029F911 /* NetworkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0295F2071B4C83ED0029F911 /* NetworkTableViewController.swift */; };
 		0295F20A1B4C84F10029F911 /* ProductCell4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0295F2091B4C84F10029F911 /* ProductCell4.swift */; };
 		0295F2101B4CBFBB0029F911 /* CheckoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0295F20F1B4CBFBB0029F911 /* CheckoutCell.swift */; };
@@ -92,6 +93,7 @@
 		028CF7151AF84D150028DA35 /* SwipeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeView.swift; sourceTree = "<group>"; };
 		028CF7181AF8508A0028DA35 /* CardsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
 		028DF9611B9E2FFA005BAA4C /* FriendsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
+		028DF9631BA27ED5005BAA4C /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		0295F2071B4C83ED0029F911 /* NetworkTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTableViewController.swift; sourceTree = "<group>"; };
 		0295F2091B4C84F10029F911 /* ProductCell4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCell4.swift; sourceTree = "<group>"; };
 		0295F20F1B4CBFBB0029F911 /* CheckoutCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckoutCell.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				026809851B29AD830006C43B /* ShipAddDetailViewController.swift */,
 				0295F2071B4C83ED0029F911 /* NetworkTableViewController.swift */,
 				022F1F0E1B572717000223E3 /* ProfileTableViewController.swift */,
+				028DF9631BA27ED5005BAA4C /* ProfileViewController.swift */,
 				02F818861B0A9D68008C06EA /* MapViewController.swift */,
 				02D5C51C1B0FC33E00B172AF /* ChatViewController.swift */,
 				02C9746F1B45EA8F0019A046 /* ProductDetailViewController.swift */,
@@ -462,6 +465,7 @@
 				0295F20A1B4C84F10029F911 /* ProductCell4.swift in Sources */,
 				02759C9E1AFC3D7B0065A492 /* LoginViewController.swift in Sources */,
 				02D5C51D1B0FC33E00B172AF /* ChatViewController.swift in Sources */,
+				028DF9641BA27ED5005BAA4C /* ProfileViewController.swift in Sources */,
 				027B6CEC1B1407ED00110516 /* Message.swift in Sources */,
 				02D9CA571AF838330087175F /* ViewController.swift in Sources */,
 				02D9CA551AF838330087175F /* Emelem.xcdatamodeld in Sources */,

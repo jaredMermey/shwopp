@@ -117,9 +117,9 @@ class CardView: UIView {
     private func initialize(){
         
         //everytime we create a CardView, we immediately create subviews of images and labels
-        brandImageView.setTranslatesAutoresizingMaskIntoConstraints(false)
-        brandImageView.backgroundColor = UIColor.clearColor()
-        addSubview(brandImageView)
+        //brandImageView.setTranslatesAutoresizingMaskIntoConstraints(false)
+        //brandImageView.backgroundColor = UIColor.clearColor()
+        //addSubview(brandImageView)
         
         productImageView.setTranslatesAutoresizingMaskIntoConstraints(false)
         productImageView.backgroundColor = UIColor.clearColor()

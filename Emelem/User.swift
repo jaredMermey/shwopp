@@ -178,5 +178,52 @@ func fetchSuggestedUsersToFollowByUser(userID: String, callback: ([String:Int]) 
         }
     })
 }
+//
+var numberOfFollowers: Int = 0
+var numberOfFollowing: Int = 0
+var numberOfLikedItems: Int = 0
+
+func getNumberOfFollowersForUser() -> Int {
+    PFQuery(className: "Relationship")
+        .whereKey("recipient", equalTo: PFUser.currentUser()!.objectId!)
+        .whereKey("type", equalTo: "follow")
+        .findObjectsInBackgroundWithBlock({
+            objects, error
+            in
+            if let relationships = objects as? [PFObject]{
+                numberOfFollowers = relationships.count
+            }
+        })
+    return numberOfFollowers
+}
+
+func getNumberOfFollowingForUser() -> Int {
+    PFQuery(className: "Relationship")
+        .whereKey("doer", equalTo: PFUser.currentUser()!.objectId!)
+        .whereKey("type", equalTo: "follow")
+        .findObjectsInBackgroundWithBlock({
+            objects, error
+            in
+            if let relationships = objects as? [PFObject]{
+                numberOfFollowing = relationships.count
+            }
+        })
+    return numberOfFollowing
+}
+
+func getNumberLikedItemsForUser() -> Int {
+    PFQuery(className: "Action")
+        .whereKey("byUser", equalTo: PFUser.currentUser()!.objectId!)
+        .whereKey("type", equalTo: "kept")
+        .findObjectsInBackgroundWithBlock({
+            objects, error
+            in
+            if let relationships = objects as? [PFObject]{
+                numberOfLikedItems = relationships.count
+            }
+        })
+    return numberOfLikedItems
+}
+
 
 
