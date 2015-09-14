@@ -36,6 +36,12 @@
 #define COCOAPODS_VERSION_MINOR_Firebase 2
 #define COCOAPODS_VERSION_PATCH_Firebase 2
 
+// IQDropDownTextField
+#define COCOAPODS_POD_AVAILABLE_IQDropDownTextField
+#define COCOAPODS_VERSION_MAJOR_IQDropDownTextField 1
+#define COCOAPODS_VERSION_MINOR_IQDropDownTextField 0
+#define COCOAPODS_VERSION_PATCH_IQDropDownTextField 6
+
 // JSQMessagesViewController
 #define COCOAPODS_POD_AVAILABLE_JSQMessagesViewController
 #define COCOAPODS_VERSION_MAJOR_JSQMessagesViewController 7

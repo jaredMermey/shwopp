@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0220BB4F1B225B2900393BBC /* NetworkKept.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0220BB4E1B225B2800393BBC /* NetworkKept.swift */; };
-		022F1F0F1B572717000223E3 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022F1F0E1B572717000223E3 /* ProfileTableViewController.swift */; };
 		022F1F111B572AC9000223E3 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022F1F101B572AC9000223E3 /* ProfileCell.swift */; };
 		0235EC321B0D7B34002B8A0C /* Kept.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0235EC311B0D7B34002B8A0C /* Kept.swift */; };
 		023CC9811B9B84F600455BB9 /* SuggestedFriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023CC9801B9B84F600455BB9 /* SuggestedFriendCell.swift */; };
@@ -74,7 +73,6 @@
 
 /* Begin PBXFileReference section */
 		0220BB4E1B225B2800393BBC /* NetworkKept.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkKept.swift; sourceTree = "<group>"; };
-		022F1F0E1B572717000223E3 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		022F1F101B572AC9000223E3 /* ProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		0235EC311B0D7B34002B8A0C /* Kept.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kept.swift; sourceTree = "<group>"; };
 		023CC9801B9B84F600455BB9 /* SuggestedFriendCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestedFriendCell.swift; sourceTree = "<group>"; };
@@ -179,7 +177,6 @@
 				026809811B2924D10006C43B /* ShippingTableViewController.swift */,
 				026809851B29AD830006C43B /* ShipAddDetailViewController.swift */,
 				0295F2071B4C83ED0029F911 /* NetworkTableViewController.swift */,
-				022F1F0E1B572717000223E3 /* ProfileTableViewController.swift */,
 				028DF9631BA27ED5005BAA4C /* ProfileViewController.swift */,
 				02F818861B0A9D68008C06EA /* MapViewController.swift */,
 				02D5C51C1B0FC33E00B172AF /* ChatViewController.swift */,
@@ -460,7 +457,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				02F818871B0A9D68008C06EA /* MapViewController.swift in Sources */,
-				022F1F0F1B572717000223E3 /* ProfileTableViewController.swift in Sources */,
 				023CC9811B9B84F600455BB9 /* SuggestedFriendCell.swift in Sources */,
 				0295F20A1B4C84F10029F911 /* ProductCell4.swift in Sources */,
 				02759C9E1AFC3D7B0065A492 /* LoginViewController.swift in Sources */,

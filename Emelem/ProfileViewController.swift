@@ -22,6 +22,11 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var followingStaticLabel: UILabel!
     @IBOutlet weak var summaryCommentLabel: UILabel!
     
+    //stats for profile
+    var numberOfFollowers: Int = 0
+    var numberOfFollowing: Int = 0
+    var numberOfLikedItems: Int = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,10 +38,10 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             self.userAvatarImage.contentMode = .ScaleAspectFill
             self.userAvatarImage.image = image
         })
+        getNumberOfFollowingForUser()
+        getNumberOfFollowersForUser()
+        getNumberLikedItemsForUser()
         
-        likeCountLabel.text = "\(numberOfLikedItems)"
-        followerCountLabel.text = "\(numberOfFollowers)"
-        followingCountLabel.text = "\(numberOfFollowing)"
         summaryCommentLabel.text = "You've invited INSERT # INVITED friends and earned INSERT $ in commissions"
 
         // Do any additional setup after loading the view.
@@ -87,13 +92,29 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         return cell
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.row == 0{
+            println("edit credit card")
+            self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        } else if indexPath.row == 1 {
+            println("edit bank account")
+            self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        } else if indexPath.row == 2 {
+             performSegueWithIdentifier("shippingVCTableSegue", sender: indexPath)
+            self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        } else if indexPath.row == 3 {
+            println("fourth thing")
+            self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        } else {
+            println("fifth thing")
+            self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        }
+    }
+
     // helper functions and variables to get stats
     
-    var numberOfFollowers: Int = 0
-    var numberOfFollowing: Int = 0
-    var numberOfLikedItems: Int = 0
     
-    func getNumberOfFollowersForUser() -> Int {
+    func getNumberOfFollowersForUser() {
         PFQuery(className: "Relationship")
             .whereKey("recipient", equalTo: PFUser.currentUser()!.objectId!)
             .whereKey("type", equalTo: "follow")
@@ -102,12 +123,12 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                 in
                 if let relationships = objects as? [PFObject]{
                     self.numberOfFollowers = relationships.count
+                    self.followerCountLabel.text = "\(self.numberOfFollowers)"
                 }
             })
-        return numberOfFollowers
     }
     
-    func getNumberOfFollowingForUser() -> Int {
+    func getNumberOfFollowingForUser() {
         PFQuery(className: "Relationship")
             .whereKey("doer", equalTo: PFUser.currentUser()!.objectId!)
             .whereKey("type", equalTo: "follow")
@@ -116,12 +137,13 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                 in
                 if let relationships = objects as? [PFObject]{
                     self.numberOfFollowing = relationships.count
+                    self.followingCountLabel.text = "\(self.numberOfFollowing)"
                 }
             })
-        return numberOfFollowing
+        
     }
     
-    func getNumberLikedItemsForUser() -> Int {
+    func getNumberLikedItemsForUser() {
         PFQuery(className: "Action")
             .whereKey("byUser", equalTo: PFUser.currentUser()!.objectId!)
             .whereKey("type", equalTo: "kept")
@@ -130,9 +152,9 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                 in
                 if let relationships = objects as? [PFObject]{
                     self.numberOfLikedItems = relationships.count
+                    self.likeCountLabel.text = "\(self.numberOfLikedItems)"
                 }
             })
-        return numberOfLikedItems
     }
     
 }

@@ -8,20 +8,20 @@
 
 import Foundation
 
+
 struct Address {
-    //figure out why id is breakng code. Not sure why I cannot retrieve it in pfAddressToAddress
-    let addressId: String
-    let addressTitle: String
-    let streetAddress: String
-    let apt: String
-    let city: String
-    let state: String
-    let zip: String
-    private let pfAddress: PFObject
+    var addressId: String
+    var addressTitle: String
+    var streetAddress: String
+    var apt: String
+    var city: String
+    var state: String
+    var zip: String
+    //private let pfAddress: PFObject
 }
 
 private func pfAddressToAddress (address: PFObject) -> Address {
-    return Address(addressId: address.objectId!, addressTitle: address.objectForKey("addressTitle") as! String, streetAddress: address.objectForKey("streetAddress") as! String, apt: address.objectForKey("apt") as! String, city: address.objectForKey("city") as! String, state: address.objectForKey("state") as! String, zip: address.objectForKey("zip") as! String, pfAddress: address)
+    return Address(addressId: address.objectId!, addressTitle: address.objectForKey("addressTitle") as! String, streetAddress: address.objectForKey("streetAddress") as! String, apt: address.objectForKey("apt") as! String, city: address.objectForKey("city") as! String, state: address.objectForKey("state") as! String, zip: address.objectForKey("zip") as! String/*, pfAddress: address*/)
 }
 
 func fetchAddresses(callback: ([Address]) -> ()) {
@@ -50,11 +50,11 @@ func fetchAddressesbyId(addressID: String, callback: ([Address]) -> ()) {
 }
 
 
+func createAddress(addressId: String, addressTitle: String, streetAddress: String, apt: String, city: String, state: String, zip: String) -> Address{
+    return Address(addressId: addressId, addressTitle: addressTitle, streetAddress: streetAddress, apt: apt, city: city, state: state, zip: zip/*, pfAddress: Address*/)
+}
 
 func saveAddress(address: Address){
-    
-    
-
     
     PFQuery(className: "Address")
     .whereKey("objectId", equalTo: address.addressId)
@@ -71,16 +71,15 @@ func saveAddress(address: Address){
                 object!.saveInBackgroundWithBlock(nil)
             }
             else {
-            let save = PFObject(className: "Address")
-            
-            save.setObject(PFUser.currentUser()!.objectId!, forKey: "userId")
-            save.setObject(address.addressTitle, forKey: "addressTitle")
-            save.setObject(address.streetAddress, forKey: "streetAddress")
-            save.setObject(address.apt, forKey: "apt")
-            save.setObject(address.city, forKey: "city")
-            save.setObject(address.state, forKey: "state")
-            save.setObject(address.zip, forKey: "zip")
-            save.saveInBackgroundWithBlock(nil)
+                let save = PFObject(className: "Address")
+                save.setObject(PFUser.currentUser()!.objectId!, forKey: "userId")
+                save.setObject(address.addressTitle, forKey: "addressTitle")
+                save.setObject(address.streetAddress, forKey: "streetAddress")
+                save.setObject(address.apt, forKey: "apt")
+                save.setObject(address.city, forKey: "city")
+                save.setObject(address.state, forKey: "state")
+                save.setObject(address.zip, forKey: "zip")
+                save.saveInBackgroundWithBlock(nil)
             }
         })
 }

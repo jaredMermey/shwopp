@@ -8,71 +8,75 @@
 
 import UIKit
 
-class ShipAddDetailViewController: UIViewController {
-    
+class ShipAddDetailViewController: UIViewController, IQDropDownTextFieldDelegate {
+   
     
     @IBOutlet weak var addressTitleTextField: UITextField!
     @IBOutlet weak var streetAddTextField: UITextField!
     @IBOutlet weak var aptTextField: UITextField!
     @IBOutlet weak var cityTextField: UITextField!
-    @IBOutlet weak var stateTextField: UITextField!
+    @IBOutlet weak var stateTextField: IQDropDownTextField!
     @IBOutlet weak var zipTextField: UITextField!
-
-    var addressId: String?
-    var addresses: [Address] = []
+    
+    
+    
+    var address: Address?
+    
+    var states: [String] = ["", "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "District of Columbia", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"]
     
     override func viewDidLoad() {
 
         super.viewDidLoad()
                // Do any additional setup after loading the view.
+        stateTextField.isOptionalDropDown = false
+        stateTextField.itemList = self.states
+        
         
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        self.addressId = appDelegate.editAddressId!
+
         
-        fetchAddressesbyId(self.addressId!, {
-            returnedAddresses in
-            self.addresses = returnedAddresses
-            
-            self.addressTitleTextField.text = self.addresses[0].addressTitle
-            self.streetAddTextField.text = self.addresses[0].streetAddress
-            self.aptTextField.text = self.addresses[0].apt
-            self.cityTextField.text = self.addresses[0].city
-            self.stateTextField.text = self.addresses[0].state
-            self.zipTextField.text = self.addresses[0].zip
-        })
+        if address != nil {
+            addressTitleTextField.text = address?.addressTitle
+            streetAddTextField.text = address?.streetAddress
+            aptTextField.text = address?.apt
+            cityTextField.text = address?.city
+            stateTextField.text = address?.state
+            zipTextField.text = address?.zip
+        }
     }
+    
+
+    
+    @IBAction func saveButtonPressed(sender: UIButton) {
+        if address != nil {
+            address?.addressTitle = self.addressTitleTextField.text
+            address?.streetAddress = self.streetAddTextField.text
+            address?.apt = self.aptTextField.text
+            address?.city = self.cityTextField.text
+            address?.state = self.stateTextField.text
+            address?.zip = self.zipTextField.text
+        } else {
+            address = createAddress("", self.addressTitleTextField.text, self.streetAddTextField.text, self.aptTextField.text, self.cityTextField.text, self.stateTextField.text, self.zipTextField.text)
+        }
+        //println(address!.addressTitle)
+        saveAddress(address!)
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func saveButtonPressed(sender: UIBarButtonItem) {
-        //call save address function
-     
-        
-        var addressTitle = self.addressTitleTextField.text
-        var streetAddress = self.streetAddTextField.text
-        var aptNo = self.aptTextField.text
-        var city = self.cityTextField.text
-        var state = self.stateTextField.text
-        var zip = self.zipTextField.text
-        
 
-        var addressID =  addresses[0].addressId as String
-        streetAddTextField.text = addresses[0].streetAddress as String
-        aptTextField.text = addresses[0].apt as String
-        cityTextField.text = addresses[0].city as String
-        stateTextField.text = addresses[0].state as String
-        zipTextField.text = addresses[0].zip as String
-        
-        println(addresses[0].apt)
-        //saveAddress(addresses[0])
-        
-    }
- 
+    
+    
 }
+    
+
+
+ 
+

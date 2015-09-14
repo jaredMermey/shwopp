@@ -9,8 +9,6 @@
 import UIKit
 
 class SettingCell: UITableViewCell {
-
-    @IBOutlet weak var settingButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
