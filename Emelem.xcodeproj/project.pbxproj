@@ -53,6 +53,7 @@
 		02E734781AFC2547001B5474 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02E734771AFC2547001B5474 /* SystemConfiguration.framework */; };
 		02E7347A1AFC2554001B5474 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 02E734791AFC2554001B5474 /* libz.dylib */; };
 		02E7347C1AFC2567001B5474 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 02E7347B1AFC2567001B5474 /* libsqlite3.dylib */; };
+		02EBA3351BA7A1F800370913 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02EBA3341BA7A1F800370913 /* MessageUI.framework */; };
 		02F818811AFD7814008C06EA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F818801AFD7814008C06EA /* User.swift */; };
 		02F818851B054941008C06EA /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F818841B054941008C06EA /* Product.swift */; };
 		02F818871B0A9D68008C06EA /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F818861B0A9D68008C06EA /* MapViewController.swift */; };
@@ -123,6 +124,7 @@
 		02E734791AFC2554001B5474 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		02E7347B1AFC2567001B5474 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		02E7347D1AFC25DB001B5474 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		02EBA3341BA7A1F800370913 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		02F818801AFD7814008C06EA /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		02F818841B054941008C06EA /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		02F818861B0A9D68008C06EA /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02EBA3351BA7A1F800370913 /* MessageUI.framework in Frameworks */,
 				027B6CEA1B14079C00110516 /* libc++.dylib in Frameworks */,
 				027B6CE81B14077D00110516 /* libicucore.dylib in Frameworks */,
 				02F818891B0A9E99008C06EA /* MapKit.framework in Frameworks */,
@@ -316,6 +319,7 @@
 		B86CDDEB08098D3B4C8C27BA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				02EBA3341BA7A1F800370913 /* MessageUI.framework */,
 				6A7E9C89E28EAEAD11D3402C /* libPods.a */,
 			);
 			name = Frameworks;

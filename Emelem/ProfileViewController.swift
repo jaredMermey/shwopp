@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MessageUI
 
-class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MFMailComposeViewControllerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
    
@@ -100,10 +101,20 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             println("edit bank account")
             self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
         } else if indexPath.row == 2 {
-             performSegueWithIdentifier("shippingVCTableSegue", sender: indexPath)
+            //this button gets user to where s/he can add/edit addresses
+            
+            performSegueWithIdentifier("shippingVCTableSegue", sender: indexPath)
             self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
         } else if indexPath.row == 3 {
-            println("fourth thing")
+            //this button gets user to email customer service
+            let mailComposeViewController = configuredMailComposerViewController()
+            if MFMailComposeViewController.canSendMail() {
+                self.presentViewController(mailComposeViewController, animated: true, completion: nil)
+            } else {
+                self.showSendMailErrorAlert()
+            }
+            
+            
             self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
         } else {
             println("fifth thing")
@@ -111,8 +122,34 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
 
-    // helper functions and variables to get stats
+    // email for customer support code
     
+    func configuredMailComposerViewController() -> MFMailComposeViewController {
+        let mailComposerVC = MFMailComposeViewController()
+        mailComposerVC.mailComposeDelegate = self
+        mailComposerVC.setToRecipients(["jmermey@gmail.com"])
+        mailComposerVC.setSubject("Help!")
+        return mailComposerVC
+    }
+    
+    func showSendMailErrorAlert() {
+        let sendMailErrorAlert = UIAlertView(title: "Could Not Send Email", message: "Your device could not send email. Please check settings and network connectivity then try again.", delegate: self, cancelButtonTitle: "OK")
+        sendMailErrorAlert.show()
+    }
+    
+    func mailComposeController(controller: MFMailComposeViewController!, didFinishWithResult result: MFMailComposeResult, error: NSError!) {
+        switch result.value {
+            case MFMailComposeResultCancelled.value:
+                println("cancelled mail")
+            case MFMailComposeResultSent.value:
+                println("mail sent")
+            default:
+                break
+        }
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    // helper functions and variables to get stats
     
     func getNumberOfFollowersForUser() {
         PFQuery(className: "Relationship")
